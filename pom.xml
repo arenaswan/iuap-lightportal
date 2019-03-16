@@ -1,0 +1,160 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.yonyou.iuap.pap</groupId>
+  <artifactId>lightportal</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>lightportal</name>
+  
+  <properties>
+          <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+          <maven.compiler.source>1.7</maven.compiler.source>
+          <maven.compiler.target>1.7</maven.compiler.target>
+          <pap_base_comp_bom.version>3.5.6-SNAPSHOT</pap_base_comp_bom.version>
+  </properties>
+  
+  <dependencyManagement>
+           <dependencies>
+               <dependency>
+                   <groupId>com.yonyou.iuap.pap.base</groupId>
+                   <artifactId>pap_base_comp_bom</artifactId>
+                   <version>${pap_base_comp_bom.version}</version>
+                   <type>pom</type>
+                   <scope>import</scope>
+               </dependency>
+           </dependencies>
+  </dependencyManagement>
+  
+  <dependencies>
+  		<dependency>
+			<groupId>com.yonyou.iuap</groupId>
+			<artifactId>iuap-auth</artifactId>
+		</dependency>
+  		<dependency>
+			<groupId>com.yonyou.iuap</groupId>
+			<artifactId>iuap-sign</artifactId>
+		</dependency>
+  
+  		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			 <artifactId>javax.servlet-api</artifactId>
+		</dependency>
+		
+		<dependency>
+			<artifactId>slf4j-api</artifactId>
+			<groupId>org.slf4j</groupId>
+		</dependency>
+		
+		<!-- cas --> 
+		<dependency>
+		    <groupId>org.jasig.cas.client</groupId>
+		    <artifactId>cas-client-core</artifactId>
+		    <exclusions>
+		        <exclusion>
+		            <groupId>xalan</groupId>
+		            <artifactId>xalan</artifactId>
+		        </exclusion>
+		        <exclusion>
+					<artifactId>bcprov-jdk15</artifactId>
+					<groupId>org.bouncycastle</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-collections</artifactId>
+					<groupId>commons-collections</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-lang</artifactId>
+					<groupId>commons-lang</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-httpclient</artifactId>
+					<groupId>commons-httpclient</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jul-to-slf4j</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>xercesImpl</artifactId>
+					<groupId>xerces</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>xml-apis</artifactId>
+					<groupId>xml-apis</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>velocity</artifactId>
+					<groupId>velocity</groupId>
+				</exclusion>
+		    </exclusions>
+		</dependency>
+		<!--集成友户通登录需要 -->
+		<dependency>
+		    <groupId>com.yonyou.yht</groupId>
+		    <artifactId>yht-sso-client</artifactId>
+		</dependency>
+		<!-- 登录后使用Redis存储session时需要 -->
+		<dependency>
+		    <groupId>com.yonyou.yht</groupId>
+		    <artifactId>yht-sso-cache</artifactId>
+		</dependency>
+		
+		<dependency>  
+		   	 <groupId>org.apache.xmlgraphics</groupId>
+			 <artifactId>batik-ext</artifactId>
+			 <version>1.7</version>
+		</dependency>  
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
+  </dependencies>
+     
+  <build>
+		<plugins>
+			<!-- compiler插件, 设定JDK版本 -->
+			<plugin>
+			     <groupId>org.apache.maven.plugins</groupId>
+			     <artifactId>maven-compiler-plugin</artifactId>
+			     <version>2.3.2</version>  
+			     <configuration>
+			     	<encoding>${project.build.sourceEncoding}</encoding>
+			        <source>${maven.compiler.source}</source>
+			        <target>${maven.compiler.target}</target>
+			        <showWarnings>true</showWarnings>
+			     </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<fileNameMapping>no-version</fileNameMapping>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+		<finalName>lightportal</finalName>
+	</build>
+  
+</project>
