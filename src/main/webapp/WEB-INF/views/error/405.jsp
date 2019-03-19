@@ -21,7 +21,7 @@
     width: 334px;
     min-height: 383px;
     margin: 0px auto;
-    background-image:url("/wbalone/images/405.png") ;
+    background-image:url("/iuap-lightportal/images/405.png") ;
     }
     </style>
     </head>
