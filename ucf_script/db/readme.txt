@@ -1,0 +1,1 @@
+http://git.yonyou.com/iuap_pap/iuap_pap_installer.git 里拷贝自己模块文件

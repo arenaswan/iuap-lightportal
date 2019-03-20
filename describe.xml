@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<name>iuap-lightportal</name>
+	<code>iuap-lightportal</code>
+	<packageType>war</packageType>
+	<serviceType>JAVA-WEB</serviceType>
+	<version>3.5.6</version>
+	<editionTime>2019-03-06 12:35:09</editionTime>
+	<signature>1222xffgg98kkhjhkk</signature>
+	<installOrder>0</installOrder>
+	<configUrls>
+		<configUrl>
+			<source>src/main/resources/sdk.properties
+</project>
