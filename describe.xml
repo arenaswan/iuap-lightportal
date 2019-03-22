@@ -10,5 +10,10 @@
 	<installOrder>0</installOrder>
 	<configUrls>
 		<configUrl>
-			<source>src/main/resources/sdk.properties
+			<source>src/main/resources/sdk.properties</source>
+		</configUrl>
+		<configUrl>
+			<source>src/main/resources/application.properties</source>
+		</configUrl>
+	</configUrls>
 </project>
