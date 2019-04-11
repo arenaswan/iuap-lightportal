@@ -26,6 +26,14 @@
             <defaultScript>true</defaultScript>
             <dml>oracle/init/dml.sql</dml>
         </dbScript>
+		<dbScript>
+            <name>sqlserver</name>
+            <code>sqlserver</code>
+            <type>init</type>
+            <dbType>sqlserver</dbType>
+            <defaultScript>true</defaultScript>
+            <dml>sqlserver/init/dml.sql</dml>
+        </dbScript>
         <!-- 升级脚本 -->
         <dbScript>
             <name>mysql</name>
@@ -44,6 +52,15 @@
             <fromVersion>3.5.5</fromVersion>
             <toVersion>3.5.6</toVersion>
             <dml>oracle/upgrade/3.5.5_to_3.5.6/dml.sql</dml>
+        </dbScript>
+		 <dbScript>
+            <name>sqlserver</name>
+            <code>sqlserver</code>
+            <dbType>sqlserver</dbType>
+            <type>upgrade</type>
+            <fromVersion>3.5.5</fromVersion>
+            <toVersion>3.5.6</toVersion>
+            <dml>sqlserver/upgrade/3.5.5_to_3.5.6/dml.sql</dml>
         </dbScript>
     </dbScripts>
 	<configUrls>
