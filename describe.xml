@@ -69,6 +69,7 @@
             <type>init</type>
             <dbType>mysql</dbType>
             <property>dep.yht.enable</property>
+			<dml>mysql/init_yht/dml.sql</dml>
         </dbScript>
         <dbScript>
             <name>oracle-yht</name>
@@ -76,6 +77,7 @@
             <type>init</type>
             <dbType>oracle</dbType>
             <property>dep.yht.enable</property>
+			<dml>oracle/init_yht/dml.sql</dml>
         </dbScript>
         <dbScript>
             <name>sqlserver-yht</name>
@@ -83,6 +85,7 @@
             <type>init</type>
             <dbType>sqlserver</dbType>
             <property>dep.yht.enable</property>
+			<dml>sqlserver/init_yht/dml.sql</dml>
         </dbScript>
     </dbScripts>
 	<configUrls>
