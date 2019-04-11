@@ -62,6 +62,28 @@
             <toVersion>3.5.6</toVersion>
             <dml>sqlserver/upgrade/3.5.5_to_3.5.6/dml.sql</dml>
         </dbScript>
+		  <!-- 友互通 -->
+        <dbScript>
+            <name>mysql-yht</name>
+            <code>mysql-yht</code>
+            <type>init</type>
+            <dbType>mysql</dbType>
+            <property>dep.yht.enable</property>
+        </dbScript>
+        <dbScript>
+            <name>oracle-yht</name>
+            <code>oracle-yht</code>
+            <type>init</type>
+            <dbType>oracle</dbType>
+            <property>dep.yht.enable</property>
+        </dbScript>
+        <dbScript>
+            <name>sqlserver-yht</name>
+            <code>sqlserver-yht</code>
+            <type>init</type>
+            <dbType>sqlserver</dbType>
+            <property>dep.yht.enable</property>
+        </dbScript>
     </dbScripts>
 	<configUrls>
 		<configUrl>
