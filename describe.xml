@@ -8,6 +8,44 @@
 	<editionTime>2019-03-06 12:35:09</editionTime>
 	<signature>1222xffgg98kkhjhkk</signature>
 	<installOrder>0</installOrder>
+	
+	<dbScripts>
+        <dbScript>
+            <name>mysql</name>
+            <code>mysql</code>
+            <type>init</type>
+            <dbType>mysql</dbType>
+            <defaultScript>true</defaultScript>
+            <dml>mysql/init/dml.sql</dml>
+        </dbScript>
+        <dbScript>
+            <name>oracle</name>
+            <code>oracle</code>
+            <type>init</type>
+            <dbType>oracle</dbType>
+            <defaultScript>true</defaultScript>
+            <dml>oracle/init/dml.sql</dml>
+        </dbScript>
+        <!-- 升级脚本 -->
+        <dbScript>
+            <name>mysql</name>
+            <code>mysql</code>
+            <dbType>mysql</dbType>
+            <type>upgrade</type>
+            <fromVersion>3.5.5</fromVersion>
+            <toVersion>3.5.6</toVersion>
+            <dml>mysql/upgrade/3.5.5_to_3.5.6/dml.sql</dml>
+        </dbScript>
+        <dbScript>
+            <name>oracle</name>
+            <code>oracle</code>
+            <dbType>oracle</dbType>
+            <type>upgrade</type>
+            <fromVersion>3.5.5</fromVersion>
+            <toVersion>3.5.6</toVersion>
+            <dml>oracle/upgrade/3.5.5_to_3.5.6/dml.sql</dml>
+        </dbScript>
+    </dbScripts>
 	<configUrls>
 		<configUrl>
 			<source>src/main/resources/sdk.properties</source>
