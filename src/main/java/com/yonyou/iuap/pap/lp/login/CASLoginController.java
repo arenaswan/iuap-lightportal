@@ -24,7 +24,7 @@ public class CASLoginController  {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String logouturl = ContextProperties.getProperty("yhtLoginLocalUrl","/wbalone/platform/cas/login?service=/iuap-lightportal-fe/index.html#/");
+		String logouturl = ContextProperties.getProperty("yhtLoginLocalUrl");
 		response.sendRedirect(logouturl);
 	}
 }

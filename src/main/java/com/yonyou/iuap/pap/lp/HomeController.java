@@ -13,7 +13,7 @@ public class HomeController
     @RequestMapping(value ="/", method =RequestMethod.GET)
     public String home(Model model)
     {        
-    	String homeurl = ContextProperties.getProperty("homeUrl","/iuap-lightportal-fe/index.html#/");
+    	String homeurl = ContextProperties.getProperty("homeUrl");
     	return "redirect:" + homeurl;
     }
 }
