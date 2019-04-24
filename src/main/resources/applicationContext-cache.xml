@@ -17,20 +17,19 @@
 
 	<description>cache、session </description>
 	
-<!-- 友户通缓存 begin -->
+	<!-- 友户通缓存 begin -->
 	<bean id="yhtredisPool" class="com.yonyou.yht.cache.redis.RedisPoolFactory" scope="prototype" factory-method="createJedisPool">
     	<constructor-arg value="${redis.url}" />
 	</bean>
 	<bean id="yhtjedisTemplate" class="org.springside.modules.nosql.redis.JedisTemplate">
     	<constructor-arg ref="yhtredisPool"></constructor-arg>
 	</bean>
-	<bean id="yhtcacheManager" class="com.yonyou.yht.cache.CacheManager">
+	<bean id="yhtcacheManager" class="com.yonyou.yht.cache.CacheManager" lazy-init="false">
     	<property name="jedisTemplate" ref="yhtjedisTemplate" />
     	<property name="sessionTimeout" value="3600" />
 	</bean>
-	<!--默认非懒加载的不需要下面的配置-->
-	<bean class="com.yonyou.yht.cache.CacheManager"  lazy-init="false"></bean>
 	<!-- 友户通缓存 end -->
+	
 	<bean id="redisPool" class="com.yonyou.iuap.cache.redis.RedisPoolFactory"
 		scope="prototype" factory-method="createJedisPool">
 		<constructor-arg value="${redis.url}" />
