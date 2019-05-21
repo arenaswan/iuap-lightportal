@@ -95,5 +95,8 @@
 		<configUrl>
 			<source>src/main/resources/application.properties</source>
 		</configUrl>
+		<configUrl>
+			<source>src/main/resources/logback.xml</source>
+		</configUrl>
 	</configUrls>
 </project>
