@@ -9,6 +9,33 @@
 	<signature>1222xffgg98kkhjhkk</signature>
 	<installOrder>0</installOrder>
 	
+	<environment>
+        <environmentGroup>
+            <groupName>日志级别配置</groupName>
+            <groupCode>log</groupCode>
+            <environmentItems>
+                <environmentItem>
+                    <name>日志级别</name>
+                    <key>level</key>
+                    <property>log.level</property>
+                    <inputType>select</inputType>
+                    <inputOptions>
+                        <option label="ALL" value="ALL"/>
+                        <option label="TRACE" value="TRACE"/>
+                        <option label="DEBUG" value="DEBUG"/>
+                        <option label="INFO" value="INFO"/>
+                        <option label="WARN" value="WARN"/>
+                        <option label="ERROR" value="ERROR"/>
+                        <option label="FATAL" value="FATAL"/>
+                        <option label="OFF" value="OFF"/>
+                    </inputOptions>
+                    <editable>true</editable>
+                    <required>true</required>
+                </environmentItem>
+            </environmentItems>
+        </environmentGroup>
+    </environment>
+    
 	<dbScripts>
         <dbScript>
             <name>mysql</name>
